@@ -1,46 +1,98 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        .outer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px);
+            margin: 50px 10px; /* Narrower side margins */
+        }
+        .container {
+            border: 2px solid black; /* Outside border */
+            padding: 50px; /* 50px padding on all sides */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+            width: 100%;
+            max-width: 600px;
+        }
+        form {
+            width: 100%; /* Full width */
+        }
+        form div {
+            margin: 20px 0; /* Margin for spacing between fields */
+        }
+        form label {
+            display: block; /* Block display to stack above inputs */
+            margin-bottom: 5px; /* Space between label and input */
+            color: black; /* Label color */
+        }
+        form input, form textarea {
+            width: calc(100% - 22px); /* Full width minus padding */
+            padding: 10px; /* Padding inside input/textarea */
+            box-sizing: border-box; /* Include padding in element's total width */
+        }
+        form input[type="submit"] {
+            width: auto; /* Auto width for submit button */
+            padding: 10px 20px; /* Padding for submit button */
+        }
+        h2 {
+            text-align: center; /* Center align heading */
+            color: black; /* Heading color */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container">
+            <h2>We'd love to hear from you!</h2>
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHs000003WTBv" method="POST" style="font-family: Times New Roman, sans-serif; color: blue;">
+                <input type="hidden" name="orgid" value="00DHs000003WTBv">
+                <input type="hidden" name="retURL" value="https://accenture-13b.my.site.com/servicetest">
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+                <!--  ----------------------------------------------------------------------  -->
+                <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                <!--  these lines if you wish to test in debug mode.                          -->
+                <!--  <input type="hidden" name="debug" value=1>                              -->
+                <!--  <input type="hidden" name="debugEmail"                                  -->
+                <!--  value="cynthia.talisay@accenture.com">                                  -->
+                <!--  ----------------------------------------------------------------------  -->
 
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: Please add the following <FORM> element to your page.             -->
-  <!--  ----------------------------------------------------------------------  -->
-  
-  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHs000003WTBv" method="POST" style="font-family: Times New Roman, sans-serif; color: blue;">
-    <input type="hidden" name="orgid" value="00DHs000003WTBv">
-    <input type="hidden" name="retURL" value="https://accenture-13b.my.site.com/servicetest">
-    
-    <!--  ----------------------------------------------------------------------  -->
-    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-    <!--  these lines if you wish to test in debug mode.                          -->
-    <!--  <input type="hidden" name="debug" value=1>                              -->
-    <!--  <input type="hidden" name="debugEmail"                                  -->
-    <!--  value="cynthia.talisay@accenture.com">                                  -->
-    <!--  ----------------------------------------------------------------------  -->
-      
-    <h2 style="text-align: side; color: black;">Send us your concern!</h2>
-    
-    <label for="name" style="color: black;">Contact Name</label><br>
-    <input id="name" maxlength="80" name="name" size="20" type="text" style="color: black; width: 30%;"" /><br><br>
-    
-    <label for="email" style="color: black;">Email</label><br>
-    <input id="email" maxlength="80" name="email" size="20" type="text" style="color: blue; width: 30%;"" /><br><br>
-    
-    <label for="phone" style="color: black;">Phone</label><br>
-    <input id="phone" maxlength="40" name="phone" size="20" type="text" style="color: blue; width: 30%;"" /><br><br>
-    
-    <label for="subject" style="color: black;">Subject</label><br>
-    <input id="subject" maxlength="80" name="subject" size="20" type="text" style="color: blue; width: 30%;"" /><br><br>
-    
-    <label for="description" style="color: black;">Description</label><br>
-    <textarea name="description" style="color: black; width: 30%;" rows="4""></textarea><br><br>
-    
-    <input type="hidden" id="external" name="external" value="1" /><br>
-    
-    <input type="submit" name="submit" style="color: blue;">
-  </form>
-  
+                <div>
+                    <label for="name">Contact Name</label>
+                    <input id="name" maxlength="80" name="name" type="text" style="color: black;" />
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" maxlength="80" name="email" type="text" style="color: blue;" />
+                </div>
+
+                <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" maxlength="40" name="phone" type="text" style="color: blue;" />
+                </div>
+
+                <div>
+                    <label for="subject">Subject</label>
+                    <input id="subject" maxlength="80" name="subject" type="text" style="color: blue;" />
+                </div>
+
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" style="color: black;" rows="4"></textarea>
+                </div>
+
+                <input type="hidden" id="external" name="external" value="1" />
+
+                <div style="text-align: center;">
+                    <input type="submit" name="submit" style="color: blue;">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
